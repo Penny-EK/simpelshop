@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff;
-  --foreground: #000;
-  --grey: #eee;
-  --accent: #0050b5;
+  --dark: #000;
+  --darkgrey: #333;
+  --lightgrey: #eee;
+  --light: #fff;
+  --cobalt-blue: #0050b5;
+  --orange: #f90;
+
+  --background: var(--light);
+  --foreground: var(--dark);
+  --grey: var(--lightgrey);
+  --accent: var(--cobalt-blue);
   /*React Icons: Font Awesome 6 - M*/
   /*TODO FONTE:
   Overskrift: DM Sans Medium - Uppercase
@@ -22,15 +29,32 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/*Darkmode functionality - uncomment if needed*/
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--dark);
+    --foreground: var(--light);
+    --grey: var(--darkgrey);
+    --accent: var(--orange);
   }
-}
+} */
 
 body {
+  /*font-family: DM Sans, sans-serif;*/ /*Insert DM Sans*/
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.title {
+  /*DM Sans inherited*/
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.special {
+  /*font-family: DM Mono, monospace;*/ /*Insert DM Mono*/
+  font-family: monospace !important; /*Remove when font is implemented*/
+  font-weight: 500;
 }
