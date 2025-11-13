@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff;
+  --foreground: #000;
+  --grey: #eee;
+  --accent: #0050b5;
+  /*React Icons: Font Awesome 6 - M*/
+  /*TODO FONTE:
+  Overskrift: DM Sans Medium - Uppercase
+  Brødtekst: DM Sans Regular
+  Special: DM Mono Regular - Uppercase
+  (Vi implementerer fonte fredag d. 14, da der er besvær med at implementere fonte
+  i Next.js)
+  */
 }
 
 @theme inline {
