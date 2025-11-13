@@ -27,24 +27,32 @@
 }
 
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--light);
-    --foreground: var(--dark);
-    --grey: var(--lightgrey);
-    --accent: var(--cobalt-blue);
+.hoverInvert {
+  transition: all 0.3s ease-in-out;
+  & * {
+    transition: inherit;
   }
-}
-
-/*Darkmode functionality - uncomment if needed*/
-/* @media (prefers-color-scheme: dark) {
-  :root {
+  &:hover {
     --background: var(--dark);
     --foreground: var(--light);
     --grey: var(--darkgrey);
     --accent: var(--orange);
   }
+}
+
+
+/*Black and white filter - Pretty cool, but probably not optimal for our use case. Nevertheless, uncomment if needed*/
+/* .hoverInvert{
+  img{
+    filter: saturate(0) contrast(120%);
+  }
+  &:hover{
+    img{
+      filter: none;
+    }
+  }
 } */
+
 
 body {
   /*font-family: DM Sans, sans-serif;*/ /*Insert DM Sans*/
@@ -58,10 +66,37 @@ body {
   /*DM Sans inherited*/
   font-weight: 500;
   text-transform: uppercase;
+  color: var(--foreground);
 }
 
 .special {
   /*font-family: DM Mono, monospace;*/ /*Insert DM Mono*/
   font-family: monospace !important; /*Remove when font is implemented*/
   text-transform: uppercase;
+  color: var(--foreground);
 }
+
+
+
+/*Darkmode functionality - uncomment if needed*/
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--dark);
+    --foreground: var(--light);
+    --grey: var(--darkgrey);
+    --accent: var(--orange);
+  }
+
+  .hoverInvert {
+    transition: all 0.3s ease-in-out;
+    & * {
+      transition: inherit;
+    }
+    &:hover {
+      --background: var(--light);
+      --foreground: var(--dark);
+      --grey: var(--lightgrey);
+      --accent: var(--cobalt-blue);
+    }
+  }
+} */
