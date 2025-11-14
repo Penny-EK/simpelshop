@@ -1,9 +1,9 @@
 import ProductList from "./Productlist";
+import FilterMenu from "./Filtermenu";
 
 export default function Home({ searchParams }) {
   return (
     <>
-      <p className="px-7 pb-2 special">All products:</p> {/* Placeholder text */}
       <ProductListContainer searchParams={searchParams} />
     </>
   );
@@ -12,5 +12,11 @@ export default function Home({ searchParams }) {
 async function ProductListContainer({ searchParams }) {
   const { category } = await searchParams;
   console.log("Category: " + category);
-  return <ProductList category={category} />;
+  return (
+    <>
+      <h1 className="title w-full text-center text-6xl pb-[1rem]">Shop</h1>
+      <FilterMenu className="z-50"></FilterMenu>
+      <ProductList category={category}></ProductList>
+    </>
+  );
 }

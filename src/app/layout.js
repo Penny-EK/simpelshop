@@ -24,7 +24,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <main className="pt-[var(--headerSpacer)]">
+        <main 
+        className="pt-[var(--headerSpacer)]"
+        >
           {children}
         </main>
       </body>
