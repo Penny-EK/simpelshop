@@ -2,8 +2,9 @@ import { Suspense } from "react";
 import Image from "next/image";
 import { FaRegStar } from "react-icons/fa6";
 
-const details = async () => {
-  const response = await fetch(`https://dummyjson.com/products/2`);
+const details = async ({ params }) => {
+  const { id } = await params;
+  const response = await fetch(`https://dummyjson.com/products/${id}`);
   const product = await response.json();
 
   return (
