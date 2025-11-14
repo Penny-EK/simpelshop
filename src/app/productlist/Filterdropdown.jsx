@@ -55,6 +55,7 @@ const FilterDropdown = ({ categories, ...props }) => {
                       ? "?"
                       : `?category=${category}`,
                   );
+                  setDropped(false);
                 }}
               >
                 {format(category)}
