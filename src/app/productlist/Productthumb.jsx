@@ -20,7 +20,7 @@ const ProductThumb = (props) => {
           </button>
         </div>
         <div className="flex h-20 items-center px-2 outline-2 outline-[var(--foreground)]">
-          <h3 className="special w-full text-center text-lg">{product.title}</h3>
+          <h3 className="special w-full text-center text-lg text-[var(--foreground)]">{product.title}</h3>
         </div>
         <Image
           className="col-start-1 col-end-1 row-start-1 row-end-1 p-10"
