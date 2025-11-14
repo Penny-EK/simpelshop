@@ -29,6 +29,15 @@
   /*headerSpacer is used to define the height of the header*/
   --headerHeight: 6rem;
   --headerSpacer: calc(var(--headerHeight) + 1rem);
+
+  color: var(--foreground);
+}
+
+.Invert {
+  --background: var(--dark);
+  --foreground: var(--light);
+  --grey: var(--darkgrey);
+  --accent: var(--orange);
 }
 
 .hoverInvert {
@@ -72,23 +81,23 @@ body {
   /*DM Sans inherited*/
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--foreground);
+  /* color: var(--foreground); */
 }
 
 .special {
   /*font-family: DM Mono, monospace;*/ /*Insert DM Mono*/
   font-family: monospace !important; /*Remove when font is implemented*/
   text-transform: uppercase;
-  color: var(--foreground);
+  /* color: var(--foreground); */
 }
 
 /*Darkmode functionality - uncomment if needed*/
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--dark);
     --foreground: var(--light);
     --grey: var(--darkgrey);
-    --accent: var(--orange);
+    --accent: var(--foreground);
   }
 
   .hoverInvert {
@@ -99,4 +108,4 @@ body {
       --accent: var(--foreground);
     }
   }
-}
+} */

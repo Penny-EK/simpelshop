@@ -15,7 +15,9 @@ async function ProductListContainer({ searchParams }) {
   return (
     <>
       <h1 className="title w-full text-center text-6xl pb-[1rem]">Shop</h1>
-      <FilterMenu className="z-50"></FilterMenu>
+      <FilterMenu className="z-50"
+      currentCategory={category}
+      ></FilterMenu>
       <ProductList category={category}></ProductList>
     </>
   );

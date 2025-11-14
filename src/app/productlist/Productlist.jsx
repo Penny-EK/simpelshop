@@ -16,7 +16,7 @@ const ProductList = ({ category }) => {
         </section>
       }
     >
-      <section className="grid grid-cols-2 border border-[var(--foreground)] bg-[var(--foreground)] md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+      <section className="grid grid-cols-2 border border-[var(--foreground)] md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         <FetchProduct category={category} />
       </section>
     </Suspense>
