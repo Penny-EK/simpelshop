@@ -46,7 +46,7 @@ const FilterDropdown = ({ categories, ...props }) => {
               <button
                 key={index}
                 className={`special block w-full cursor-pointer px-3 py-1.5 text-left outline lg:py-1 ${
-                  category === currentCategory
+                  category === currentCategory || (category === "all-categories" && currentCategory === undefined)
                     ? // ? "bg-[var(--foreground)] text-[var(--background)] outline-[var(--background)]"
                       // : "hoverInvert bg-[var(--background)] text-[var(--foreground)] outline-[var(--foreground)]"
                       "bg-[var(--foreground)] text-[var(--background)] outline-[var(--foreground)]"

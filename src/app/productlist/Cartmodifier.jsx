@@ -55,7 +55,7 @@ const CartModifier = (props) => {
   const quantity = getQuantity(id);
   const exists = quantity > 0;
 
-  const shoppingCartStyling = "text-3xl text-[var(--foreground)] mx-3";
+  const shoppingCartStyling = "text-3xl text-[var(--foreground)] mx-3 cursor-pointer";
   
   return (
     <div className="isolate ml-auto flex h-15 min-w-15 items-center justify-center bg-[var(--background)] outline-1 outline-[var(--foreground)]">
@@ -66,7 +66,7 @@ const CartModifier = (props) => {
       {exists && (
         <>
           <p className="text-2xl w-10 text-center text-[var(--foreground)]">
-            {quantity} {/* Now shows actual quantity */}
+            {quantity}
           </p>
           <button onClick={() => removeFromInventory(id)}>
             <BsFillCartDashFill className={shoppingCartStyling} />
