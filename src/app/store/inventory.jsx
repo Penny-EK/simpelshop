@@ -97,17 +97,31 @@ const inventory = create(
           }
         }
       },
+
+      // Remove item entirely regardless of count
+      removeAllFromInventory: (productId) => {
+        const current = get().inInventory;
+        set({
+          inInventory: current.filter(item => item.id !== productId)
+        });
+      },
       
       // Optional: Get quantity for a specific product
       getQuantity: (productId) => {
         const item = get().inInventory.find(item => item.id === productId);
         return item ? item.count : 0;
-      }
+      },
+
+      // Clear inventory
+      clearInventory: () => {
+        set({ inInventory: [] });
+      }, 
     }),
     {
       name: "inventory-storage",
     }
   )
 );
+
 
 export default inventory;
