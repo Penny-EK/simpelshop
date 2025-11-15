@@ -7,6 +7,7 @@ import { BsFillCartDashFill } from "react-icons/bs";
 //Deviating slightly from plan, font awesome 6 does not include a cart with a minus so I am using Bootstrap Icons
 
 import inventory from "../store/inventory";
+import { useEffect, useState } from "react";
 
 // const CartModifier = (props) => {
 //   const id = props.id;
@@ -51,7 +52,12 @@ import inventory from "../store/inventory";
 const CartModifier = (props) => {
   const id = props.id;
   const { addToInventory, removeFromInventory, getQuantity } = inventory();
+  const [isClient, setIsClient] = useState(false);
   
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const quantity = getQuantity(id);
   const exists = quantity > 0;
 
@@ -63,7 +69,7 @@ const CartModifier = (props) => {
         <BsFillCartPlusFill className={shoppingCartStyling} />
       </button>
       
-      {exists && (
+      {isClient && exists && (
         <>
           <p className="text-2xl w-10 text-center text-[var(--foreground)]">
             {quantity}

@@ -1,4 +1,3 @@
-"use client;"; //So we may use useState, if needed
 
 import Image from "next/image";
 import Link from "next/link";

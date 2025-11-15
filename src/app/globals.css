@@ -92,7 +92,7 @@ body {
 }
 
 /*Darkmode functionality - uncomment if needed*/
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--dark);
     --foreground: var(--light);
@@ -108,4 +108,4 @@ body {
       --accent: var(--foreground);
     }
   }
-}
+} */
