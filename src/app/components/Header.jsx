@@ -24,7 +24,7 @@ export default function Header() {
       <header className="fixed z-100 w-full flex h-[var(--headerHeight)] items-center justify-between border-b-2 border-[var(--foreground)] bg-[var(--background)] px-4 px-7">
         <h1>
           <Link className="title text-2xl font-bold" href={"/"}>
-            Simple<br></br>Shop
+            Simple<br></br>Webshop
           </Link>
         </h1>
         <div className="flex items-center">
