@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const FilterDropdown = ({ categories, ...props }) => {
+
   const [dropped, setDropped] = useState(false);
   const router = useRouter();
 
@@ -33,6 +34,8 @@ const FilterDropdown = ({ categories, ...props }) => {
           <span className="font-regular">{format(currentCategory)}</span>
         </p>
       )}
+      <div>
+      </div>
       {/* <div className="relative overflow-visible"> */}
       {dropped ? (
         <div
@@ -42,7 +45,7 @@ const FilterDropdown = ({ categories, ...props }) => {
             return (
               <button
                 key={index}
-                className={`block special w-full cursor-pointer px-3 py-1.5 text-left outline lg:py-1 ${
+                className={`special block w-full cursor-pointer px-3 py-1.5 text-left outline lg:py-1 ${
                   category === currentCategory
                     ? // ? "bg-[var(--foreground)] text-[var(--background)] outline-[var(--background)]"
                       // : "hoverInvert bg-[var(--background)] text-[var(--foreground)] outline-[var(--foreground)]"
