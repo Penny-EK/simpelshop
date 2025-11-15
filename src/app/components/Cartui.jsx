@@ -19,14 +19,23 @@ const CartUi = (props) => {
       <h2 className="title my-4 w-full text-center text-3xl text-[var(--foreground)]">
         Your cart
       </h2>
-      <div className="my-2 flex items-center justify-center gap-4 mx-3">
-        <p className="">You currently have {totalQuantity} items your cart.</p>
-        <Link
-          href={""}
-          className="special hoverInvert bg-[var(--background)] py-1 px-2 text-[var(--foreground)] outline outline-[var(--foreground)]"
-        >
-          {"> "}Go to checkout
-        </Link>
+      <div className="mx-3 my-2 flex items-center justify-center gap-4">
+        {totalQuantity === 0 ? (
+          <p className="">You currently have no items in your cart.</p>
+        ) : (
+          <>
+            <p className="">
+              You currently have {totalQuantity}{" "}
+              {totalQuantity === 1 ? "item" : "items"} in your cart.
+            </p>
+            <Link
+              href={""}
+              className="special hoverInvert bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)]"
+            >
+              {"> "}Go to checkout
+            </Link>
+          </>
+        )}
       </div>
 
       <div className="grid-auto-rows grid">

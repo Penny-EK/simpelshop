@@ -27,7 +27,8 @@ const CartItem = (props) => {
     <div className="grid h-[40vh] grid-cols-2 grid-rows-2 border border-0 border-t-1 border-[var(--foreground)] bg-[var(--background)]">
       <div className="col-span-2 col-start-1 row-span-0 row-start-1 flex flex-col justify-center px-4 py-4 pr-20">
         <Link href={`../product/${product.id}`}>
-          <h3 className="title z-10 text-2xl text-white mix-blend-difference underline">
+          {quantity > 1 ? <span className="text-3xl">{quantity}X </span> : ""}
+          <h3 className="title z-10 text-2xl text-white underline mix-blend-difference">
             {product.title}
           </h3>
         </Link>
