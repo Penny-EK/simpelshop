@@ -13,6 +13,9 @@ export default function Home() {
         <Link href="/productlist" className="block text-blue-500 underline">
           {">"} Product List
         </Link>
+        <Link href="/checkout" className="block text-blue-500 underline">
+          {">"} Checkout
+        </Link>
         <p className="special"> Special Text. Lorem or something.</p>
       </div>
       <div className="h-[120vh]">

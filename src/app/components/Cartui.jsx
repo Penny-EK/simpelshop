@@ -31,7 +31,7 @@ const CartUi = (props) => {
             </p>
             <div className="grid grid-cols-2 w-full min-h-10">
               <Link
-                href={""}
+                href={"/checkout"}
                 className="special hoverInvert bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)] flex items-center justify-center cursor-pointer"
               >
                 <span className="block pr-2">{"> "}</span>Go to checkout
