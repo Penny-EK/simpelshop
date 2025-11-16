@@ -89,12 +89,9 @@ body {
   }
 }
 
-
 .category-scroll {
   animation: scroll 20s linear infinite;
 }
-
-
 
 /*Darkmode functionality - uncomment if needed*/
 @media (prefers-color-scheme: dark) {
@@ -113,4 +110,4 @@ body {
       --accent: var(--foreground);
     }
   }
-
+}
