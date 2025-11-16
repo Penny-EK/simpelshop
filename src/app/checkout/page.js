@@ -1,7 +1,6 @@
 "use client";
 //Loads using client - This is suboptimal, but going insane from rewriting half the project for a school project
-// would be even more suboptimal. At least the product browser is using server, and it'd probably be rare for you
-// to have more than 30 unqiue items in your cart. AHHHHHHHHH
+// would be even more suboptimal. AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHSHAO)SHIOASUHIASUHIASHIASHIDWHIULFEHIULFCEWUHIURLTFEWH
 
 import { useState, useEffect } from "react";
 // import Image from "next/image";
@@ -38,16 +37,32 @@ export default function Checkout() {
     .toFixed(2);
   console.log("Full total: " + fullTotal);
 
-  return (
+  return totalQuantity === 0 ? (
+    <section className="flex h-[calc(100vh-var(--headerSpacer))] flex-col items-center">
+      <div className="my-auto px-7 pb-[var(--headerSpacer)]">
+        <h1 className="title mb-10 text-4xl">
+          You currently have no items in your cart.
+        </h1>
+        <Link href="/productlist" className="text-2xl underline">
+          {">"} Proceed to product list
+        </Link>
+      </div>
+    </section>
+  ) : (
     <section className="h-[calc(100vh-var(--headerSpacer)-var(--titleHeight))]">
       <h1 className="title flex h-[var(--titleHeight)] w-full items-center justify-center pb-[1rem] text-center text-6xl">
         Checkout
       </h1>
       <div className="flex h-full flex-col-reverse border border-0 border-t-1 border-[var(--foreground)] md:flex-row">
-        <div className="order-2 basis-2/6 border border-t-0 border-[var(--foreground)] md:order-2 md:basis-2/5">
-          <p className="title w-full text-center text-3xl">
+        <div className="order-2 flex basis-2/6 flex-col items-center border border-t-0 border-[var(--foreground)] md:order-2 md:basis-2/5">
+          <p className="title w-full border-b-1 border-[var(--foreground)] py-5 text-center text-3xl">
             Total: {fullTotal}$
           </p>
+
+          <button className="my-auto">
+            {">  "}
+            <span className="underline">Add payment method</span>
+          </button>
           <div className="grid min-h-10 w-full grid-cols-2">
             <Link
               href={""}
@@ -67,7 +82,7 @@ export default function Checkout() {
             </button>
           </div>
         </div>
-        <div className="order-1 basis-4/6 overflow-y-auto border border-t-0 border-[var(--foreground)] md:order-1 md:basis-3/5">
+        <div className="order-1 flex basis-4/6 flex-col-reverse overflow-y-auto border border-t-0 border-[var(--foreground)] md:order-1 md:basis-3/5">
           {inInventory.map((item, index) => (
             //   <p key={index}>{item.id}</p>
 

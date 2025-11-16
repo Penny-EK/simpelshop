@@ -11,6 +11,10 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [showCartUI, setShowCartUI] = useState(false);
   const inInventory = inventory((state) => state.inInventory);
+  const toCartUi = (onClick) => {
+    setShowCartUI(false);
+    onClick();
+  };
 
   // Calculate total quantity
   const totalQuantity = inInventory.reduce(
@@ -48,9 +52,9 @@ export default function Header() {
           <Link
             href="/productlist"
             className={
-              "title h-full w-1/2 flex-grow py-1 text-center font-bold border border-1" +
+              "title hoverInvert  h-full w-1/2 flex-grow border border-1 py-1 text-center font-bold" +
               (pathname === "/productlist"
-                ? "hoverInvert border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)]"
+                ? "border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)]"
                 : "border-[var(--background)] bg-[var(--background)] text-[var(--foreground)]")
             }
           >
@@ -60,7 +64,7 @@ export default function Header() {
           <Link
             href="/checkout"
             className={
-              "title hoverInvert h-full w-1/2 flex-grow py-1 text-center font-bold border border-1" +
+              "title hoverInvert h-full w-1/2 flex-grow border border-1 py-1 text-center font-bold" +
               (pathname === "/checkout"
                 ? "border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)]"
                 : "border-[var(--background)] bg-[var(--background)] text-[var(--foreground)]")
@@ -70,7 +74,9 @@ export default function Header() {
           </Link>
         </div>
       </header>
-      {showCartUI ? <CartUi></CartUi> : ""}
+      {showCartUI ? <CartUi
+        onCartUi={toCartUi}
+      ></CartUi> : ""}
     </>
   );
 }

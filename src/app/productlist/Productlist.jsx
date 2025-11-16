@@ -84,7 +84,10 @@
 // export default ProductList;
 
 "use client";
+//Loads using client - This is suboptimal, but going insane from rewriting half the project for a school project
+// would be even more suboptimal. AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHSHAO)SHIOASUHIASUHIASHIASHIDWHIULFEHIULFCEWUHIURLTFEWH
 
+// import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Loading from "../components/Loading";
@@ -135,6 +138,7 @@ const ProductList = ({ category: propCategory }) => {
   }
 
   return (
+    
     <section className="grid grid-cols-2 border border-[var(--foreground)] md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
       {products.map((product) => (
         <ProductThumb product={product} key={product.id} />
