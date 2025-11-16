@@ -29,7 +29,7 @@ const details = async ({ params }) => {
             <p>{product.shippingInformation}</p>
 
             <button
-              className="px-8 py-2 text-white"
+              className="px-8 py-2 text-(--light)"
               style={{ background: "var(--accent)" }}
             >
               Add to Cart
@@ -47,7 +47,7 @@ const details = async ({ params }) => {
               <div key={index}>
                 <div className="flex">
                   {[...Array(review.rating)].map((_, i) => (
-                    <FaRegStar key={i} color="var(--accent)" size={24} />
+                    <FaRegStar key={i} color="var(--dark)" size={24} />
                   ))}
                 </div>
 
