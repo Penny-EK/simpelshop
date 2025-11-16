@@ -36,7 +36,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${dmMono.variable} ${dmSans.variable} antialiased`}
       >
         <Header />
-        <main className="pt-[var(--headerSpacer)]">{children}</main>
+
+        <main 
+        className="pt-[var(--headerSpacer)]"
+        >
+          {children}
+        </main>
       </body>
     </html>
   );

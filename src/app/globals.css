@@ -11,7 +11,12 @@
   --background: var(--light);
   --foreground: var(--dark);
   --grey: var(--lightgrey);
-  --accent: var(--cobalt-blue);
+  /* --accent: var(--cobalt-blue); */
+  --accent: var(--foreground);
+  /*As discussed, we will remove the accent color; currently
+  uses the foreground color, as accent is already used, and
+  so we may reimplement colorful accents if we change our mind.*/
+
   /*React Icons: Font Awesome 6 - M*/
   /*TODO FONTE:
   Overskrift: DM Sans Medium - Uppercase
@@ -30,12 +35,16 @@
   transition: all 0.3s ease-in-out;
   & * {
     transition: inherit;
+    &span {
+      transition: color 0.3s ease-in-out;
+    }
   }
   &:hover {
     --background: var(--dark);
     --foreground: var(--light);
     --grey: var(--darkgrey);
-    --accent: var(--orange);
+    /* --accent: var(--orange); */
+    --accent: var(--foreground);
   }
 }
 
@@ -80,12 +89,15 @@ body {
   }
 }
 
+
 .category-scroll {
   animation: scroll 20s linear infinite;
 }
 
+
+
 /*Darkmode functionality - uncomment if needed*/
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: var(--dark);
     --foreground: var(--light);
@@ -94,15 +106,11 @@ body {
   }
 
   .hoverInvert {
-    transition: all 0.3s ease-in-out;
-    & * {
-      transition: inherit;
-    }
     &:hover {
       --background: var(--light);
       --foreground: var(--dark);
       --grey: var(--lightgrey);
-      --accent: var(--cobalt-blue);
+      --accent: var(--foreground);
     }
   }
-} */
+

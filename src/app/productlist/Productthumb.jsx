@@ -12,7 +12,7 @@ const ProductThumb = (props) => {
       className="pointer-cursor aspect-square bg-[var(--background)] border border-[var(--foreground)] hoverInvert"
     >
       <div className="grid w-fit">
-        <div className="grid-inherit z-10 col-start-1 col-end-1 row-start-1 row-end-1 flex w-full flex-col justify-self-center">
+        <div className="grid-inherit col-start-1 col-end-1 row-start-1 row-end-1 flex w-full flex-col justify-self-center">
           <button className="ml-auto flex aspect-square w-15 items-center justify-center bg-[var(--background)] 
           outline-1 outline-[var(--foreground)] pointer-cursor">
             {/*IMPORTANT TODO: Stop link from cascading down to button*/}
