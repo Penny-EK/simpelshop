@@ -1,25 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import CategoriesBanner from "./components/CategoriesBanner";
 
 export default function Home() {
   return (
-    /*Placeholder page containing links - Could be used as a sandbox for testing components and styling as well*/
-    <div>
-      <div className="px-7">
-        <h1 className="title">Placeholder Page</h1>
-        <Link href="/product" className="block text-blue-500 underline">
-          {">"} Product Singleview
-        </Link>
-        <Link href="/productlist" className="block text-blue-500 underline">
-          {">"} Product List
-        </Link>
-        <p className="special"> Special Text. Lorem or something.</p>
-      </div>
-      <div className="h-[120vh]">
-        {/*Tall div to test scrollability of header*/}
-      </div>
+    <div className="">
+      <h1 className="text-5xl">Welcome to Simple Shop</h1>
+      <CategoriesBanner />
+      <Link href="/productlist" className="uppercase">
+        See our catelog
+      </Link>
     </div>
-
-    /*------------------------------------------------------------------------------------------------------*/
   );
 }
