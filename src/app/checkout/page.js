@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 // import Image from "next/image";
 import inventory from "../store/inventory";
 import CheckoutItem from "./CheckoutItem";
+import Link from "next/link";
 
 export default function Checkout() {
   //   const id = props.id;
@@ -39,9 +40,34 @@ export default function Checkout() {
 
   return (
     <section className="h-[calc(100vh-var(--headerSpacer)-var(--titleHeight))]">
-      <h1 className="title w-full text-center text-6xl pb-[1rem] h-[var(--titleHeight)] flex items-center justify-center">Checkout</h1>
-      <div className="flex h-full border border-0 border-t-1 border-[var(--foreground)]">
-        <div className="border border-[var(--foreground)] border-0 border-l-1 w-3/5 md:w-1/2 overflow-y-auto">
+      <h1 className="title flex h-[var(--titleHeight)] w-full items-center justify-center pb-[1rem] text-center text-6xl">
+        Checkout
+      </h1>
+      <div className="flex h-full flex-col-reverse border border-0 border-t-1 border-[var(--foreground)] md:flex-row">
+        <div className="order-2 basis-2/6 border border-t-0 border-[var(--foreground)] md:order-2 md:basis-2/5">
+          <p className="title w-full text-center text-3xl">
+            Total: {fullTotal}$
+          </p>
+          <div className="grid min-h-10 w-full grid-cols-2">
+            <Link
+              href={""}
+              className="special hoverInvert flex cursor-pointer items-center justify-center bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)]"
+            >
+              <span className="block pr-2">{"> "}</span>Proceed to payment
+            </Link>
+            <button
+              className="special hoverInvert flex cursor-pointer items-center justify-center bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)]"
+              onClick={() => {
+                inInventory.forEach((item) => {
+                  clearInventory();
+                });
+              }}
+            >
+              <span className="block pr-2">X </span>Clear cart
+            </button>
+          </div>
+        </div>
+        <div className="order-1 basis-4/6 overflow-y-auto border border-t-0 border-[var(--foreground)] md:order-1 md:basis-3/5">
           {inInventory.map((item, index) => (
             //   <p key={index}>{item.id}</p>
 
@@ -51,9 +77,6 @@ export default function Checkout() {
               onTotal={updateTotal}
             ></CheckoutItem>
           ))}
-        </div>
-        <div className="border border-[var(--foreground)] border-t-0 flex-grow">
-            <p>Total: {fullTotal}$</p>
         </div>
       </div>
     </section>
