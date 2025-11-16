@@ -11,24 +11,7 @@ const FilterMenu = async (props) => {
     <div
     //className="scrollbar-hide grid auto-cols-max grid-flow-col gap-3 overflow-x-auto overflow-y-hidden py-0.75 pr-7 pl-7"
     >
-      {/* <button className="font-bold capitalize">Filters</button>
-      {categories.map((category, index) => {
-        const formattedCategory = category
-          .replaceAll("-", " ")
-          .replace(/\b\w/g, (char) => char.toUpperCase())
-          .replace(/\bMens\b/g, "Men's")
-          .replace(/\bWomens\b/g, "Women's");
-        return (
-        //   <CategoryButton
-        //     searchParams={props.selected}
-        //     categoryName={formattedCategory}
-        //     rawCategory={category}
-        //     key={index}
-        //   />
-        <p>{formattedCategory} </p>
-        );
-      })} */}
-      <FilterDropdown categories={categories}></FilterDropdown>
+      <FilterDropdown categories={categories} currentCategory={props.currentCategory}></FilterDropdown>
     </div>
   );
 };

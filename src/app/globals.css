@@ -29,6 +29,17 @@
   /*headerSpacer is used to define the height of the header*/
   --headerHeight: 6rem;
   --headerSpacer: calc(var(--headerHeight) + 1rem);
+
+  --titleHeight: 6rem;
+
+  color: var(--foreground);
+}
+
+.Invert {
+  --background: var(--dark);
+  --foreground: var(--light);
+  --grey: var(--darkgrey);
+  --accent: var(--orange);
 }
 
 .hoverInvert {
@@ -60,6 +71,30 @@
   }
 } */
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 10px;
+  border: 3px solid var(--foreground);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--foreground) var(--background);
+}
+
 body {
   font-family: var(--font-dm-sans), sans-serif;
   background: var(--background);
@@ -71,13 +106,13 @@ body {
   /*DM Sans inherited*/
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--foreground);
+  /* color: var(--foreground); */
 }
 
 .special {
   font-family: var(--font-dm-mono), monospace;
   text-transform: uppercase;
-  color: var(--foreground);
+  /* color: var(--foreground); */
 }
 /* animation for index categories */
 @keyframes scroll {
@@ -99,7 +134,7 @@ body {
     --background: var(--dark);
     --foreground: var(--light);
     --grey: var(--darkgrey);
-    --accent: var(--orange);
+    --accent: var(--foreground);
   }
 
   .hoverInvert {
