@@ -36,6 +36,7 @@ const details = async ({ params }) => {
               Add to Cart
             </button>
             <div className="my-4">
+              <h3 className="text-2xl"> Practical information</h3>
               <p className="my-1.5">{product.shippingInformation}</p>
               <p className="my-1.5">{product.returnPolicy}</p>
               <p className="my-1.5">{product.warrantyInformation}</p>
@@ -43,7 +44,7 @@ const details = async ({ params }) => {
           </div>
         </div>
 
-        <div className="h-fit bg-(--dark) py-10">
+        <div className="h-fit bg-(--foreground) py-10">
           <div className="mx-auto h-fit max-w-[1000px]">
             <div className="my-8">
               <h2 className="my-4 text-4xl text-(--background)">Reviews</h2>
