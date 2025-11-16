@@ -21,12 +21,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed z-100 w-full flex h-[var(--headerHeight)] items-center justify-between border-b-2 border-[var(--foreground)] bg-[var(--background)] px-4 px-7">
-        <h1>
-          <Link className="title text-2xl font-bold" href={"/"}>
-            Simple<br></br>Webshop
-          </Link>
-        </h1>
+      <header className="fixed z-100 flex h-[var(--headerHeight)] w-full items-center justify-between border-b-2 border-[var(--foreground)] bg-[var(--background)] px-4 px-7">
+        <Link className="title text-2xl font-bold" href={"/"}>
+          Simple<br></br>Webshop
+        </Link>
         <div className="flex items-center">
           {showCartUI ? (
             <BsCartXFill
@@ -46,4 +44,3 @@ export default function Header() {
     </>
   );
 }
-
