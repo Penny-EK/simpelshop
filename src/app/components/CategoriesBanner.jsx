@@ -3,7 +3,7 @@ import { Suspense } from "react";
 
 const CategoriesBanner = () => {
   return (
-    <article className="flex h-16 w-full items-center justify-center overflow-hidden bg-(--dark)">
+    <article className="my-4 flex h-16 w-full items-center justify-center overflow-hidden bg-(--dark)">
       <Suspense fallback={<div className="text-(--light)">Loading...</div>}>
         <FetchCategories />
       </Suspense>
@@ -19,11 +19,11 @@ const FetchCategories = async () => {
 
   return (
     <div className="relative w-full overflow-hidden">
-      <ul className="flex animate-[scroll_40s_linear_infinite] text-(--light)">
+      <ul className="category-scroll flex text-(--light)">
         {duplicatedCategories.map((category, index) => (
           <li
             key={`${category.slug}-${index}`}
-            className="shrink-0 px-8 text-xl whitespace-nowrap font-(family-name:--font-dm-mono) text-(--light) uppercase"
+            className="shrink-0 px-8 font-(family-name:--font-dm-mono) text-xl whitespace-nowrap text-(--light) uppercase"
           >
             {category.name || category.slug}
           </li>
