@@ -29,7 +29,7 @@ const FetchProduct = async ({ category }) => {
   const response = await fetch(url);
   const { products } = await response.json();
   return products
-    .slice(0, 6)
+    .slice(0, 5)
     .map((product, index) => <ProductThumb product={product} key={index} />);
 };
 
