@@ -18,7 +18,7 @@ export default function Checkout() {
     clearInventory,
   } = inventory();
 
-  console.log("Inventory contents in Checkout:", inInventory);
+  //console.log("Inventory contents in Checkout:", inInventory);
 
   const totalQuantity = inInventory.reduce(
     (total, item) => total + item.count,
@@ -35,7 +35,7 @@ export default function Checkout() {
   const fullTotal = Object.values(totals)
     .reduce((a, b) => a + b, 0)
     .toFixed(2);
-  console.log("Full total: " + fullTotal);
+  //console.log("Full total: " + fullTotal);
 
   return totalQuantity === 0 ? (
     <section className="flex h-[calc(100vh-var(--headerSpacer))] flex-col items-center">

@@ -115,7 +115,7 @@ const ProductList = ({ category: propCategory }) => {
         const response = await fetch(url);
         const data = await response.json();
 
-        console.log("Fetching URL:", url);
+        //console.log("Fetching URL:", url);
 
         setProductsLocal(data.products); // render locally
         setFetchedCount(data.products.length); // update Zustand

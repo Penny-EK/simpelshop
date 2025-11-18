@@ -5,7 +5,7 @@ const FilterMenu = async (props) => {
   const response = await fetch("https://dummyjson.com/products/category-list");
   const fetchedCategories = await response.json();
   const categories = ["all-categories", ...fetchedCategories];
-  console.log("Categories: " + categories);
+  //console.log("Categories: " + categories);
 
   return (
     <div

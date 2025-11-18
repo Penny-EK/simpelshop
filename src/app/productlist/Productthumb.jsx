@@ -4,7 +4,7 @@ import Link from "next/link";
 import CartModifier from "./Cartmodifier";
 const ProductThumb = (props) => {
   const product = props.product;
-  console.log(product);
+  //console.log(product);
   return (
     <div
       // href={`../product/${product.id}`}

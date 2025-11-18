@@ -13,7 +13,7 @@ const FilterDropdown = ({ categories, ...props }) => {
 
   const currentCategory = props.currentCategory;
 
-  console.log("Current category in FilterDropdown: " + currentCategory);
+  //console.log("Current category in FilterDropdown: " + currentCategory);
 
   const fetchedCount = usePagesStore((state) => state.fetchedCount);
   const totalCount = usePagesStore((state) => state.totalCount);
@@ -27,8 +27,8 @@ const FilterDropdown = ({ categories, ...props }) => {
   if (totalCount > 30) pageCount = 7;
   const skip = (page - 1) * fetchedCount;
 
-  console.log("Fetched count in FilterDropdown: " + fetchedCount);
-  console.log("Total count in FilterDropdown: " + totalCount);
+  //console.log("Fetched count in FilterDropdown: " + fetchedCount);
+  //console.log("Total count in FilterDropdown: " + totalCount);
 
   return (
     <div className={`flex h-18 border border-[var(--foreground)]`}>

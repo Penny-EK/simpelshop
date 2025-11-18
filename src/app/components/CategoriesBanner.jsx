@@ -1,5 +1,6 @@
 import React from "react";
 import { Suspense } from "react";
+import Link from "next/link";
 
 const CategoriesBanner = () => {
   return (
@@ -25,9 +26,12 @@ const FetchCategories = async () => {
         {duplicatedCategories.map((category, index) => (
           <li
             key={`${category.slug}-${index}`}
-            className="shrink-0 px-8 font-(family-name:--font-dm-mono) text-xl whitespace-nowrap text-(--background) uppercase"
+            // className="shrink-0 px-8 font-(family-name:--font-dm-mono) text-xl whitespace-nowrap text-(--background) uppercase"
           >
-            {category.name || category.slug}
+            <Link className="shrink-0 px-8 font-(family-name:--font-dm-mono) text-xl whitespace-nowrap text-(--background) uppercase"
+            href={"productlist?category=" + category.slug}>
+              {category.name || category.slug}
+            </Link>
           </li>
         ))}
       </ul>

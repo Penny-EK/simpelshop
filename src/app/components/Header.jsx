@@ -21,10 +21,10 @@ export default function Header() {
     (total, item) => total + item.count,
     0,
   );
-  console.log("Inventory contents:", inInventory);
-  console.log("Total quantity: " + totalQuantity);
+  //console.log("Inventory contents:", inInventory);
+  //console.log("Total quantity: " + totalQuantity);
   const pathname = usePathname();
-  console.log("Pathname (From Header): " + pathname);
+  //console.log("Pathname (From Header): " + pathname);
 
   return (
     <>

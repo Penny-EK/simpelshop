@@ -5,10 +5,15 @@ import Link from "next/link";
 
 const CartUi = (props) => {
   const id = props.id;
-  const { addToInventory, removeFromInventory, getQuantity, inInventory, clearInventory} =
-    inventory();
+  const {
+    addToInventory,
+    removeFromInventory,
+    getQuantity,
+    inInventory,
+    clearInventory,
+  } = inventory();
 
-  console.log("Inventory contents:", inInventory);
+  //console.log("Inventory contents:", inInventory);
 
   const totalQuantity = inInventory.reduce(
     (total, item) => total + item.count,
@@ -29,20 +34,21 @@ const CartUi = (props) => {
               You currently have {totalQuantity}{" "}
               {totalQuantity === 1 ? "item" : "items"} in your cart.
             </p>
-            <div className="grid grid-cols-2 w-full min-h-10">
+            <div className="grid min-h-10 w-full grid-cols-2">
               <Link
                 href={"/checkout"}
-                className="special hoverInvert bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)] flex items-center justify-center cursor-pointer"
+                className="special hoverInvert flex cursor-pointer items-center justify-center bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)]"
                 onClick={props.onCartUi}
               >
                 <span className="block pr-2">{"> "}</span>Go to checkout
               </Link>
-              <button className="special hoverInvert bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)] flex items-center justify-center cursor-pointer"
-              onClick={ () => {
-                inInventory.forEach((item) => {
-                  clearInventory();
-                });
-              }}
+              <button
+                className="special hoverInvert flex cursor-pointer items-center justify-center bg-[var(--background)] px-2 py-1 text-[var(--foreground)] outline outline-[var(--foreground)]"
+                onClick={() => {
+                  inInventory.forEach((item) => {
+                    clearInventory();
+                  });
+                }}
               >
                 <span className="block pr-2">X </span>Clear cart
               </button>
